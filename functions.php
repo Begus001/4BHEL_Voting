@@ -71,11 +71,23 @@
       if (!($sqlconn->connect_error)) {
           $sqlconn->select_db("main");
 
-          $userquery = $sqlconn->query("update main.votes set ".$var."='".$val."' where id=".$id."");
+          $userquery = $sqlconn->query("update main.votes set ".$var."='".$val."' where id=".$id);
           $sqlconn->close();
       } else {
           die("db error");
       }
+  }
+
+  function sql_delete_vote($id) {
+    $sqlconn = new mysqli("127.0.0.1", "root", "123456789");
+
+    if(!($sqlconn->connect_error)){
+        $sqlconn->select_db("main");
+        $sqlconn->query("delete from main.votes where id=".$id);
+        $sqlconn->close();
+    } else {
+        die("db error");
+    }
   }
 
   function cookie_loginquery($val)
