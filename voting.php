@@ -66,12 +66,13 @@
           $item = array();
           $item = unserialize($items[$i]);
           echo "<form action='vote.php' method='post' enctype='multipart/form-data'>\r\n
-          <h1>".$names[$i]."</h1>\r\n";
+          <h1>".$names[$i]."</h1>\r\n
+          <input type='submit' value='Löschen' name='action'>";
           for($k = 0; $k < sizeof($item); $k++){
               echo $item[$k]."<input type='radio' name='select".$i."' value='".$k."'>\r\n";
             }
 
-            echo "<input type='submit' value='Abstimmen'>\r\n";
+            echo "<input type='submit' value='Abstimmen' name='action'>\r\n";
             echo "<input type='hidden' name='voteid' value='".$i."'>";
             echo "</form>\r\n";
           }

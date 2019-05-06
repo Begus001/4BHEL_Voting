@@ -1,0 +1,7 @@
+[0.1.0]
+Added initial functionality, including:
+-Changing password
+-Creating votes
+-Deleting votes
+-Login system
+-Voting
